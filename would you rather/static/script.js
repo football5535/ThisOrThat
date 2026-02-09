@@ -32,6 +32,7 @@ function renderquestion(a){
 
 }
 function renderanswers(a, b){
+    document.getElementById("Start").style.display = 'none'
     const question_text = document.getElementById("question_text_a")
     const answer1_lable = document.getElementById("answer1_text_lable")
     const answer2_lable = document.getElementById("answer2_text_lable")
@@ -45,7 +46,7 @@ function renderanswers(a, b){
     answer2_lable.innerHTML = data[questionnumber]["2"]
     const answer = document.getElementById("answer")
     const questiona = document.getElementById("question")
-    answer.style.display = 'flex !important'
+    answer.style.display = 'flex'
     questiona.style.display = 'none'
 }
 const render = document.body.dataset.render; 
