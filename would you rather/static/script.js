@@ -6,10 +6,7 @@ const data = {
   1: {"0": "Coke or Pepsi?", "1": "Coke", "2": "Pepsi" },
   2: {"0": "Taco or Pizza?", "1": "Taco", "2": "Pizza" }
 };
-const maxKey = Math.max(...Object.keys(data).map(Number));
-if(Number(localStorage.getItem("questionnumber")) == maxKey ){
-  window.location.href = '/data'
-}
+
 document.getElementById("total").style.display = "none"
 
 function answer(value) {
@@ -18,6 +15,10 @@ function answer(value) {
   renderanswers()
 }
 function renderquestion(a){
+  const maxKeya = Math.max(...Object.keys(data).map(Number));
+  if(Number(localStorage.getItem("questionnumber")) == maxKeya ){
+  window.location.href = '/data'
+  }
     localStorage.setItem("questionnumber", Number(localStorage.getItem("questionnumber")) + a);
     let questionnumber = localStorage.getItem("questionnumber");
     document.getElementById("Start").style.display = 'none'
