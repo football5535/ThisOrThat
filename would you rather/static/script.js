@@ -66,3 +66,34 @@ if(render == "1"){
     let answer2 =document.body.dataset.total2;
     renderanswers(answer1, answer2)
 }
+if(render == "3"){
+    const totals = [
+      Number(document.body.dataset.total1),
+      Number(document.body.dataset.total2),
+      Number(document.body.dataset.total3),
+      Number(document.body.dataset.total4)
+    ];
+    const holder = document.getElementById("total");
+    const questionKeys = Object.keys(data).map(Number).sort((a, b) => a - b);
+
+    holder.innerHTML = "";
+
+    let totalIndex = 0;
+    for (const key of questionKeys) {
+      const questionTitle = document.createElement("h3");
+      questionTitle.textContent = data[key]["0"];
+      holder.appendChild(questionTitle);
+
+      const answer1Row = document.createElement("p");
+      answer1Row.textContent = `${data[key]["1"]}: ${totals[totalIndex] ?? 0}`;
+      holder.appendChild(answer1Row);
+
+      const answer2Row = document.createElement("p");
+      answer2Row.textContent = `${data[key]["2"]}: ${totals[totalIndex + 1] ?? 0}`;
+      holder.appendChild(answer2Row);
+
+      totalIndex += 2;
+    }
+    holder.style.display = "flex"
+    document.getElementById("answer").style.display = "none"
+}

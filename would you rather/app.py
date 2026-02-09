@@ -7,7 +7,7 @@ filename =  'answers.json'
 
 @app.route('/')
 def home():
-    return render_template('index.html', render=0, total1=0, total2=0,)
+    return render_template('index.html', render=0, total1=0, total2=0, total3=0, total4=0)
 
 @app.route('/answer/<question>/<int:answer>')
 def pushanswer(question, answer):
@@ -37,7 +37,17 @@ def display(question):
     total2 = data[question]["2"]
 
 
-    return render_template('index.html', total1=total1, total2=total2, render=1)
+    return render_template('index.html', total1=total1, total2=total2, total3=0, total4=0, render=1)
+
+@app.route("/data")
+def answers():
+    with open(filename, "r") as file:
+        data = json.load(file)
+    total1 = data["question1"]["1"]
+    total2 = data["question1"]["2"]
+    total3 = data["question2"]["1"]
+    total4 = data["question2"]["2"]
+    return render_template('index.html', total1=total1, total2=total2, total3=total3, total4=total4, render=3)
 
     
 

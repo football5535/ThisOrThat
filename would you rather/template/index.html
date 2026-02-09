@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/style.css">
     <script src="/static/script.js" defer></script>
   </head>
-  <body data-total1="{{ total1 }}" data-total2="{{ total2 }}" data-render="{{ render }}">
+  <body data-total1="{{ total1 }}" data-total2="{{ total2 }}" data-render="{{ render }}" data-total3="{{ total3 }}" data-total4="{{ total4 }}">
     <main class="wrap">
       <button onclick="renderquestion(0)" id="Start">Start</button>
       
@@ -27,6 +27,9 @@
           <p id="answer2_text"></p>
           <button onclick="renderquestion(1)" id="next">next</button>
           <p id="finish">You are done</p>
+      </div>
+      <div id="total">
+        
       </div>
     </main>
   </body>
