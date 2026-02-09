@@ -6,7 +6,7 @@ const data = {
   2: {"0": "Taco or Pizza?", "1": "Taco", "2": "Pizza" }
 };
 
-
+document.getElementById("total").style.display = "none"
 
 function answer(value) {
   const questionnumber = localStorage.getItem("questionnumber");
@@ -96,4 +96,5 @@ if(render == "3"){
     }
     holder.style.display = "flex"
     document.getElementById("answer").style.display = "none"
+    document.getElementById("Start").style.display = "none"
 }
