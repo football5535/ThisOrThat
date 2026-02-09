@@ -48,6 +48,13 @@ function renderanswers(a, b){
     const questiona = document.getElementById("question")
     answer.style.display = 'flex'
     questiona.style.display = 'none'
+    
+    
+    const maxKey = Math.max(...Object.keys(data).map(Number));
+    if(questionnumber === maxKey){
+      document.getElementById("next").style.display = "none"
+      document.getElementById("finish").style.display = "Block"
+    }
 }
 const render = document.body.dataset.render; 
 if(render == "1"){
