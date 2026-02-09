@@ -107,3 +107,17 @@ h2{
     align-items: center;
     font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+#finish{
+    display: none;
+    color: red;
+    font-size: 0.5rem;
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (min-width: 1000px){
+    html, body{
+        font-size: 14px;
+    }
+    .wrap{
+        width: 90%;
+    }
+}
