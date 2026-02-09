@@ -16,6 +16,7 @@ function answer(value) {
 function renderquestion(a){
     localStorage.setItem("questionnumber", Number(localStorage.getItem("questionnumber")) + a);
     let questionnumber = localStorage.getItem("questionnumber");
+    document.getElementById("Start").style.display = 'none'
     const question_text = document.getElementById("question_text")
     const answer1 = document.getElementById("answer1")
     const answer2 = document.getElementById("answer2")
@@ -23,7 +24,8 @@ function renderquestion(a){
     const questiona = document.getElementById("question")
     answer.style.display = 'none'
     questiona.style.display = 'flex'
-    console.log(questionnumber)
+    console.log(questiona.style.display)
+    console.log(questiona)
     question_text.innerHTML = data[questionnumber]["0"]
     answer1.innerHTML = data[questionnumber]["1"]
     answer2.innerHTML = data[questionnumber]["2"]
@@ -43,7 +45,7 @@ function renderanswers(a, b){
     answer2_lable.innerHTML = data[questionnumber]["2"]
     const answer = document.getElementById("answer")
     const questiona = document.getElementById("question")
-    answer.style.display = 'flex'
+    answer.style.display = 'flex !important'
     questiona.style.display = 'none'
 }
 const render = document.body.dataset.render; 
