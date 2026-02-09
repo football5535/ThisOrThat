@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,13 +8,16 @@
     <script src="/static/script.js" defer></script>
   </head>
   <body data-total1="{{ total1 }}" data-total2="{{ total2 }}" data-render="{{ render }}">
-    <main>
-      <button onclick="renderquestion(0)">Start</button>
+    <main class="wrap">
+      <button onclick="renderquestion(0)" id="Start">Start</button>
+      
       <div id="question"> 
           <h2 id="question_text"></h2>
+          <div>
           <button id="answer1" onclick="answer(1)"></button>
           <hr>
           <button id="answer2" onclick="answer(2)"></button>
+          </div>
       </div>
       <div id="answer">
           <h2 id="question_text_a"></h2>
@@ -27,3 +30,4 @@
     </main>
   </body>
 </html>
+
