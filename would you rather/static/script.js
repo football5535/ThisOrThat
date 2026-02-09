@@ -29,8 +29,8 @@ function renderquestion(a){
     question_text.innerHTML = data[questionnumber]["0"]
     answer1.innerHTML = data[questionnumber]["1"]
     answer2.innerHTML = data[questionnumber]["2"]
-    const maxKey = Math.max(...Object.keys(data).map(Number));
-    if(questionnumber === maxKey){
+  const maxKey = Math.max(...Object.keys(data).map(Number));
+    if(Number(questionnumber) === maxKey){
       document.getElementById("Start").style.display = "none"
       document.getElementById("finish").style.display = "Block"
     }
@@ -55,7 +55,7 @@ function renderanswers(a, b){
     
     
     const maxKey = Math.max(...Object.keys(data).map(Number));
-    if(questionnumber === maxKey){
+    if(Number(questionnumber) === maxKey){
       document.getElementById("next").style.display = "none"
       document.getElementById("finish").style.display = "Block"
     }
